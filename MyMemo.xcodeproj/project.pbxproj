@@ -8,7 +8,6 @@
 
 /* Begin PBXBuildFile section */
 		E1237FFC232F78D00001C53F /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1237FFB232F78D00001C53F /* AppDelegate.swift */; };
-		E1237FFE232F78D00001C53F /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = E1237FFD232F78D00001C53F /* ViewController.swift */; };
 		E1238001232F78D00001C53F /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = E1237FFF232F78D00001C53F /* Main.storyboard */; };
 		E1238004232F78D00001C53F /* MyMemo.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = E1238002232F78D00001C53F /* MyMemo.xcdatamodeld */; };
 		E1238006232F78D10001C53F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = E1238005232F78D10001C53F /* Assets.xcassets */; };
@@ -18,7 +17,6 @@
 /* Begin PBXFileReference section */
 		E1237FF8232F78D00001C53F /* MyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		E1237FFB232F78D00001C53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		E1237FFD232F78D00001C53F /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		E1238000232F78D00001C53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1238003232F78D00001C53F /* MyMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyMemo.xcdatamodel; sourceTree = "<group>"; };
 		E1238005232F78D10001C53F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -57,7 +55,6 @@
 			isa = PBXGroup;
 			children = (
 				E1237FFB232F78D00001C53F /* AppDelegate.swift */,
-				E1237FFD232F78D00001C53F /* ViewController.swift */,
 				E1237FFF232F78D00001C53F /* Main.storyboard */,
 				E1238005232F78D10001C53F /* Assets.xcassets */,
 				E1238007232F78D10001C53F /* LaunchScreen.storyboard */,
@@ -139,7 +136,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				E1238004232F78D00001C53F /* MyMemo.xcdatamodeld in Sources */,
-				E1237FFE232F78D00001C53F /* ViewController.swift in Sources */,
 				E1237FFC232F78D00001C53F /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
