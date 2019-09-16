@@ -6,6 +6,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
@@ -137,11 +138,32 @@
                             <outlet property="delegate" destination="r7j-fa-YV0" id="qkN-Ma-fTu"/>
                         </connections>
                     </tableView>
-                    <navigationItem key="navigationItem" title="목록" id="PK6-fA-Pbm"/>
+                    <navigationItem key="navigationItem" title="목록" id="PK6-fA-Pbm">
+                        <barButtonItem key="rightBarButtonItem" systemItem="add" id="NVO-VL-KaI">
+                            <connections>
+                                <segue destination="NJb-fj-wkx" kind="show" id="37G-Oi-Sr0"/>
+                            </connections>
+                        </barButtonItem>
+                    </navigationItem>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmv-6c-pHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="82.608695652173921" y="46.467391304347828"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="vcw-hE-Vjk">
+            <objects>
+                <viewController id="NJb-fj-wkx" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="Po3-1Z-RkZ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <viewLayoutGuide key="safeArea" id="Caw-9n-DzF"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="6TA-zM-Fgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="830" y="46"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="ftB-Ra-H6a">
