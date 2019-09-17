@@ -199,36 +199,51 @@
             </objects>
             <point key="canvasLocation" x="828.98550724637687" y="45.652173913043484"/>
         </scene>
-        <!--View Controller-->
+        <!--상세화면-->
         <scene sceneID="t06-eV-W2v">
             <objects>
-                <viewController id="ftg-UE-IYB" sceneMemberID="viewController">
+                <viewController title="상세화면" id="ftg-UE-IYB" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xj-CU-iMr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-1s-hS9">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="oYc-1s-hS9">
                                 <rect key="frame" x="20" y="80" width="374" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="21" id="IQT-k5-hay"/>
+                                </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-Bu-o1x">
-                                <rect key="frame" x="20" y="109" width="374" height="42"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="내용" textAlignment="natural" lineBreakMode="wordWrap" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PJs-Bu-o1x">
+                                <rect key="frame" x="20" y="121.00000000000001" width="374" height="15.666666666666671"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="13"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="mbP-bh-lgK">
-                                <rect key="frame" x="20" y="159" width="250" height="250"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mbP-bh-lgK">
+                                <rect key="frame" x="20" y="156.66666666666663" width="250" height="250"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="250" id="C9U-ah-w5E"/>
+                                    <constraint firstAttribute="height" constant="250" id="DBa-LF-8kb"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="oYc-1s-hS9" firstAttribute="top" secondItem="0xj-CU-iMr" secondAttribute="topMargin" constant="16" id="Iv4-d1-PT6"/>
+                            <constraint firstItem="mbP-bh-lgK" firstAttribute="top" secondItem="PJs-Bu-o1x" secondAttribute="bottom" constant="20" id="ULh-4G-da5"/>
+                            <constraint firstItem="PJs-Bu-o1x" firstAttribute="trailing" secondItem="0xj-CU-iMr" secondAttribute="trailingMargin" id="UNd-Nh-tge"/>
+                            <constraint firstItem="oYc-1s-hS9" firstAttribute="leading" secondItem="0xj-CU-iMr" secondAttribute="leadingMargin" id="aSo-1L-Cd7"/>
+                            <constraint firstItem="mbP-bh-lgK" firstAttribute="leading" secondItem="0xj-CU-iMr" secondAttribute="leadingMargin" id="aUI-gq-8Zm"/>
+                            <constraint firstItem="PJs-Bu-o1x" firstAttribute="leading" secondItem="0xj-CU-iMr" secondAttribute="leadingMargin" id="n6I-6s-nmr"/>
+                            <constraint firstItem="oYc-1s-hS9" firstAttribute="trailing" secondItem="0xj-CU-iMr" secondAttribute="trailingMargin" id="snI-zD-ZzU"/>
+                            <constraint firstItem="PJs-Bu-o1x" firstAttribute="top" secondItem="oYc-1s-hS9" secondAttribute="bottom" constant="20" id="tLc-A0-SPT"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="Nai-Zo-NcK"/>
                     </view>
+                    <navigationItem key="navigationItem" title="Title" id="qpN-HL-ehU"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntu-XU-oDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
