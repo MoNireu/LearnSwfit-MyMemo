@@ -16,6 +16,7 @@
 		E194EB18233371CB00DB9828 /* MemoFormVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194EB17233371CB00DB9828 /* MemoFormVC.swift */; };
 		E194EB1A233371DC00DB9828 /* MemoReadVC.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194EB19233371DC00DB9828 /* MemoReadVC.swift */; };
 		E194EB1C2333727100DB9828 /* MemoCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194EB1B2333727100DB9828 /* MemoCell.swift */; };
+		E194EB1E2333AC7C00DB9828 /* MemoData.swift in Sources */ = {isa = PBXBuildFile; fileRef = E194EB1D2333AC7C00DB9828 /* MemoData.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		E194EB17233371CB00DB9828 /* MemoFormVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoFormVC.swift; sourceTree = "<group>"; };
 		E194EB19233371DC00DB9828 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		E194EB1B2333727100DB9828 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
+		E194EB1D2333AC7C00DB9828 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -65,6 +67,7 @@
 				E1237FFB232F78D00001C53F /* AppDelegate.swift */,
 				E1237FFF232F78D00001C53F /* Main.storyboard */,
 				E194EB1B2333727100DB9828 /* MemoCell.swift */,
+				E194EB1D2333AC7C00DB9828 /* MemoData.swift */,
 				E1238005232F78D10001C53F /* Assets.xcassets */,
 				E1238007232F78D10001C53F /* LaunchScreen.storyboard */,
 				E123800A232F78D10001C53F /* Info.plist */,
@@ -150,6 +153,7 @@
 				E194EB162333718100DB9828 /* MemoListVC.swift in Sources */,
 				E194EB1A233371DC00DB9828 /* MemoReadVC.swift in Sources */,
 				E1238004232F78D00001C53F /* MyMemo.xcdatamodeld in Sources */,
+				E194EB1E2333AC7C00DB9828 /* MemoData.swift in Sources */,
 				E194EB18233371CB00DB9828 /* MemoFormVC.swift in Sources */,
 				E1237FFC232F78D00001C53F /* AppDelegate.swift in Sources */,
 				E194EB1C2333727100DB9828 /* MemoCell.swift in Sources */,
