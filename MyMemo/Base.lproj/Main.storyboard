@@ -195,10 +195,22 @@
                     </view>
                     <navigationItem key="navigationItem" title="메모작성" id="529-3e-ffL">
                         <rightBarButtonItems>
-                            <barButtonItem systemItem="camera" id="WRV-30-6Na"/>
-                            <barButtonItem title="저장" id="ltH-fC-9Os"/>
+                            <barButtonItem systemItem="camera" id="WRV-30-6Na">
+                                <connections>
+                                    <action selector="pick:" destination="NJb-fj-wkx" id="exQ-P2-Nbf"/>
+                                </connections>
+                            </barButtonItem>
+                            <barButtonItem title="저장" id="ltH-fC-9Os">
+                                <connections>
+                                    <action selector="save:" destination="NJb-fj-wkx" id="205-pb-Wah"/>
+                                </connections>
+                            </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
+                    <connections>
+                        <outlet property="contents" destination="atX-SC-WDk" id="ljX-B3-Fa2"/>
+                        <outlet property="preview" destination="KUs-xV-I7G" id="GKn-sd-xye"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="6TA-zM-Fgc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

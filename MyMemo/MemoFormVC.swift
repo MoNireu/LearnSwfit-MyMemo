@@ -8,8 +8,17 @@
 
 import UIKit
 
-class MemoFormVC: UIViewController {
-
+class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+    var subject: String!
+    
+    @IBOutlet var contents: UITextView!
+    @IBOutlet var preview: UIImageView!
+    
+    @IBAction func save(_ sender: Any) {
+    }
+    @IBAction func pick(_ sender: Any) {
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
