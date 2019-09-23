@@ -134,6 +134,12 @@
                                         <constraint firstItem="EQL-dq-Cli" firstAttribute="leading" secondItem="fM5-JV-PMk" secondAttribute="trailing" constant="11" id="xrC-y6-tis"/>
                                     </constraints>
                                 </tableViewCellContentView>
+                                <connections>
+                                    <outlet property="contents" destination="NWE-Fe-Nqi" id="g7e-Vq-8TO"/>
+                                    <outlet property="img" destination="fM5-JV-PMk" id="JP3-X5-lwE"/>
+                                    <outlet property="regdate" destination="Osa-IK-S0S" id="msG-3U-dOc"/>
+                                    <outlet property="subject" destination="EQL-dq-Cli" id="beX-gB-EIe"/>
+                                </connections>
                             </tableViewCell>
                         </prototypes>
                         <connections>
