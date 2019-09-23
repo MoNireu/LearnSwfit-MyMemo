@@ -13,19 +13,37 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
 
     @IBOutlet var contents: UITextView!
     @IBOutlet var preview: UIImageView!
-    @IBOutlet var doneButton: UIBarButtonItem!
+    @IBOutlet var doneSaveButton: UIBarButtonItem!
+    @IBOutlet var pickerButton: UIBarButtonItem!
     
 
-    @IBAction func done(_ sender: Any) {
+    @IBAction func doneAndSave(_ sender: Any) {
         self.contents.resignFirstResponder()
         
-        // 내용을 입력하지 않은 경우, 경고한다.
-        guard self.contents.text.isEmpty == false else {
-        let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
-            alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
-            self.present(alert, animated: true)
-            return
+        if doneSaveButton.title == "저장" {
+            // 내용을 입력하지 않은 경우, 경고한다.
+            guard self.contents.text.isEmpty == false else {
+            let alert = UIAlertController(title: nil, message: "내용을 입력해주세요", preferredStyle: .alert)
+                alert.addAction(UIAlertAction(title: "OK", style: .default, handler: nil))
+                self.present(alert, animated: true)
+                return
+            }
+            // MemoData 객체를 생성하고, 데이터를 담는다.
+            let data = MemoData()
+
+            data.title    = self.subject
+            data.contents = self.contents.text
+            data.regdate  = Date()
+            data.image    = self.preview.image
+
+            // 앱 델리게이트 객체를 읽어온 다음, memolist 배열에 MemoData객체를 추가한다.
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.memolist.append(data)
+        
+            self.navigationController?.popViewController(animated: true)
         }
+        
+        doneSaveButton.title = "저장"
     }
 
     @IBAction func pick(_ sender: Any) {
@@ -42,30 +60,17 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.contents.delegate = self
 
     }
-
-    override func viewWillDisappear(_ animated: Bool) {
-        if contents.text.isEmpty == false {
-            // MemoData 객체를 생성하고, 데이터를 담는다.
-            let data = MemoData()
-
-            data.title    = self.subject
-            data.contents = self.contents.text
-            data.regdate  = Date()
-            data.image    = self.preview.image
-
-            // 앱 델리게이트 객체를 읽어온 다음, memolist 배열에 MemoData객체를 추가한다.
-            let appDelegate = UIApplication.shared.delegate as! AppDelegate
-                   appDelegate.memolist.append(data)
-        }
-     }
-
+        
     func textViewDidBeginEditing(_ textView: UITextView) {
-        doneButton.isEnabled = true
+        doneSaveButton.title = "완료"
+        pickerButton.isEnabled = false
+        doneSaveButton.isEnabled = true
     }
     
     func textViewDidEndEditing(_ textView: UITextView) {
-        doneButton.isEnabled = false
+        pickerButton.isEnabled = true
     }
+ 
     
     func textViewDidChange(_ textView: UITextView) {
         // 내용의 최대 15자리까지 읽어 subject 변수에 저장한다.

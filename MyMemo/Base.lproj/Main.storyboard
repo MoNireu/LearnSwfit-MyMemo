@@ -201,19 +201,20 @@
                         <rightBarButtonItems>
                             <barButtonItem systemItem="camera" id="WRV-30-6Na">
                                 <connections>
-                                    <action selector="pick:" destination="NJb-fj-wkx" id="exQ-P2-Nbf"/>
+                                    <action selector="pick:" destination="NJb-fj-wkx" id="nXf-WM-n3w"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem enabled="NO" title="완료" id="ltH-fC-9Os">
+                            <barButtonItem enabled="NO" title="저장" id="ltH-fC-9Os">
                                 <connections>
-                                    <action selector="done:" destination="NJb-fj-wkx" id="GBV-AI-ltc"/>
+                                    <action selector="doneAndSave:" destination="NJb-fj-wkx" id="EVD-R4-hoe"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="contents" destination="atX-SC-WDk" id="ljX-B3-Fa2"/>
-                        <outlet property="doneButton" destination="ltH-fC-9Os" id="4e7-66-0Tc"/>
+                        <outlet property="doneSaveButton" destination="ltH-fC-9Os" id="Ab7-yx-4NQ"/>
+                        <outlet property="pickerButton" destination="WRV-30-6Na" id="uMp-wK-PRC"/>
                         <outlet property="preview" destination="KUs-xV-I7G" id="GKn-sd-xye"/>
                     </connections>
                 </viewController>
