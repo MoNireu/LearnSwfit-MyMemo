@@ -8,7 +8,7 @@
 
 import UIKit
 
-class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
+class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate, UITextViewDelegate{
     var subject: String!
     
     @IBOutlet var contents: UITextView!
@@ -27,8 +27,18 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        self.contents.delegate = self
+        
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        // 내용의 최대 15자리까지 읽어 subject 변수에 저장한다.
+        let contents = textView.text as NSString
+        let length = ((contents.length > 15) ? 15 : contents.length)
+        self.subject = contents.substring(with: NSRange(location: 0, length: length))
+        
+        // 내비게이션 타이틀에 표시한다.
+        self.navigationItem.title = subject
     }
     
     // 이미지 선택을 완료했을 떄 호출되는 메소드

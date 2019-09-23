@@ -20,7 +20,6 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
-		E1237FF8232F78D00001C53F /* MyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; name = MyMemo.app; path = "/Users/monireu/Desktop/Practice/rubypaper_swift/MyMemo/build/Debug-iphoneos/MyMemo.app"; sourceTree = "<absolute>"; };
 		E1237FFB232F78D00001C53F /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		E1238000232F78D00001C53F /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		E1238003232F78D00001C53F /* MyMemo.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = MyMemo.xcdatamodel; sourceTree = "<group>"; };
@@ -32,6 +31,7 @@
 		E194EB19233371DC00DB9828 /* MemoReadVC.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoReadVC.swift; sourceTree = "<group>"; };
 		E194EB1B2333727100DB9828 /* MemoCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoCell.swift; sourceTree = "<group>"; };
 		E194EB1D2333AC7C00DB9828 /* MemoData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MemoData.swift; sourceTree = "<group>"; };
+		E1FB6F012338DBAE003CA978 /* MyMemo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MyMemo.app; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -49,6 +49,7 @@
 			isa = PBXGroup;
 			children = (
 				E1237FFA232F78D00001C53F /* MyMemo */,
+				E1FB6F012338DBAE003CA978 /* MyMemo.app */,
 			);
 			sourceTree = "<group>";
 		};
@@ -87,7 +88,7 @@
 			);
 			name = MyMemo;
 			productName = MyMemo;
-			productReference = E1237FF8232F78D00001C53F /* MyMemo.app */;
+			productReference = E1FB6F012338DBAE003CA978 /* MyMemo.app */;
 			productType = "com.apple.product-type.application";
 		};
 /* End PBXNativeTarget section */
