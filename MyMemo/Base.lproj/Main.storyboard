@@ -198,15 +198,16 @@
                                     <action selector="pick:" destination="NJb-fj-wkx" id="exQ-P2-Nbf"/>
                                 </connections>
                             </barButtonItem>
-                            <barButtonItem title="저장" id="ltH-fC-9Os">
+                            <barButtonItem enabled="NO" title="완료" id="ltH-fC-9Os">
                                 <connections>
-                                    <action selector="save:" destination="NJb-fj-wkx" id="205-pb-Wah"/>
+                                    <action selector="done:" destination="NJb-fj-wkx" id="GBV-AI-ltc"/>
                                 </connections>
                             </barButtonItem>
                         </rightBarButtonItems>
                     </navigationItem>
                     <connections>
                         <outlet property="contents" destination="atX-SC-WDk" id="ljX-B3-Fa2"/>
+                        <outlet property="doneButton" destination="ltH-fC-9Os" id="4e7-66-0Tc"/>
                         <outlet property="preview" destination="KUs-xV-I7G" id="GKn-sd-xye"/>
                     </connections>
                 </viewController>
