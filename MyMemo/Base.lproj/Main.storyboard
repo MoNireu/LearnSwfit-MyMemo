@@ -2,7 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnX-kG-wVN">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -161,7 +160,7 @@
                         </barButtonItem>
                     </navigationItem>
                     <connections>
-                        <segue destination="ftg-UE-IYB" kind="show" id="lg3-tK-gvQ"/>
+                        <segue destination="ftg-UE-IYB" kind="show" identifier="Detail_segue" id="lg3-tK-gvQ"/>
                     </connections>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Dmv-6c-pHf" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -231,7 +230,7 @@
         <!--상세화면-->
         <scene sceneID="t06-eV-W2v">
             <objects>
-                <viewController title="상세화면" id="ftg-UE-IYB" customClass="MemoReadVC" customModule="MyMemo" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="MemoRead" title="상세화면" useStoryboardIdentifierAsRestorationIdentifier="YES" id="ftg-UE-IYB" customClass="MemoReadVC" customModule="MyMemo" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="0xj-CU-iMr">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -273,6 +272,11 @@
                         <viewLayoutGuide key="safeArea" id="Nai-Zo-NcK"/>
                     </view>
                     <navigationItem key="navigationItem" title="Title" id="qpN-HL-ehU"/>
+                    <connections>
+                        <outlet property="contents" destination="PJs-Bu-o1x" id="jZp-1C-5E9"/>
+                        <outlet property="img" destination="mbP-bh-lgK" id="jpT-Cp-Oiz"/>
+                        <outlet property="subject" destination="oYc-1s-hS9" id="DkK-RJ-JQT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ntu-XU-oDm" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

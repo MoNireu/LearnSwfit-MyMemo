@@ -46,32 +46,38 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         doneSaveButton.title = "저장"
     }
 
+    // 이미지 선택시 호출되는 메소드
     @IBAction func pick(_ sender: Any) {
         let picker = UIImagePickerController()
 
         picker.delegate      = self
         picker.allowsEditing = true
 
-        self.present(picker, animated: false)
+        self.present(picker, animated: true)
     }
 
+    
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         self.contents.delegate = self
 
     }
-        
+    
+    // 텍스트 입력시 "저장"버튼을 "완료"버튼으로 변경 및 활성화. "이미지 피커"버튼 비활성화.
     func textViewDidBeginEditing(_ textView: UITextView) {
         doneSaveButton.title = "완료"
         pickerButton.isEnabled = false
         doneSaveButton.isEnabled = true
     }
     
+    // 텍스트 입력 완료시 "이미지 피커"버튼 활성화.
     func textViewDidEndEditing(_ textView: UITextView) {
         pickerButton.isEnabled = true
     }
  
-    
+    // 내용에 따라 제목 설정
     func textViewDidChange(_ textView: UITextView) {
         // 내용의 최대 15자리까지 읽어 subject 변수에 저장한다.
         let contents = textView.text as NSString
@@ -88,7 +94,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.preview.image        = info[.editedImage] as? UIImage
 
         //이미지 피커 컨트롤러를 닫는다.
-        picker.dismiss(animated: false)
+        picker.dismiss(animated: true)
     }
 
 

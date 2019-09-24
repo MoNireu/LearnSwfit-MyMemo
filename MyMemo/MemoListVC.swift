@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MemoListVC: UITableViewController {
 
     // 앱 델리게이트 객체의 참조 정보를 읽어온다.
@@ -48,6 +49,21 @@ class MemoListVC: UITableViewController {
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
        let count = appDelegate.memolist.count
         return count
+    }
+    
+    
+    override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        // memolist 배열에서 선택된 행에 맞는 데이터를 꺼낸다.
+        let row = self.appDelegate.memolist[indexPath.row]
+        
+        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoReadVC else {
+            NSLog("problem Occured.")
+            return
+        }
+        
+        vc.param = row
+        self.navigationController?.pushViewController(vc, animated: true)
+        
     }
     /*
     // MARK: - Navigation
