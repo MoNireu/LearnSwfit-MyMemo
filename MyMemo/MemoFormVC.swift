@@ -16,7 +16,15 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
     @IBOutlet var doneSaveButton: UIBarButtonItem!
     @IBOutlet var pickerButton: UIBarButtonItem!
     
+    
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        self.contents.delegate = self
 
+    }
+    
+    // MARK: - Save contents
     @IBAction func doneAndSave(_ sender: Any) {
         self.contents.resignFirstResponder()
         
@@ -46,25 +54,51 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         doneSaveButton.title = "저장"
     }
 
+    
+    
+    // MARK: - Image editing
     // 이미지 선택시 호출되는 메소드
     @IBAction func pick(_ sender: Any) {
-        let picker = UIImagePickerController()
+        let actionSheet = UIAlertController(title: nil, message: "이미지를 가져올 곳을 선택해주세요", preferredStyle: .actionSheet)
+        let camera = UIAlertAction(title: "카메라", style: .default) {(_) in
+            self.source(.camera)
+        }
+        let album = UIAlertAction(title: "저장앨범", style: .default) {(_) in
+            self.source(.savedPhotosAlbum)
+        }
+        let photoLibrary = UIAlertAction(title: "저장앨범", style: .default) {(_) in
+            self.source(.photoLibrary)
+        }
+        actionSheet.addAction(camera)
+        actionSheet.addAction(album)
+        actionSheet.addAction(photoLibrary)
+        
+        self.present(actionSheet, animated: true)
+    }
+    
+    
+    // 이미지 선택을 완료했을 떄 호출되는 메소드
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        // 선택된 이미지를 미리보기에 표시한다.
+        self.preview.image        = info[.editedImage] as? UIImage
 
+        //이미지 피커 컨트롤러를 닫는다.
+        picker.dismiss(animated: true)
+    }
+    
+    // 소스타입 설정 커스텀 메소드
+    func source(_ sourceType: UIImagePickerController.SourceType) -> Void {
+        let picker = UIImagePickerController()
         picker.delegate      = self
         picker.allowsEditing = true
+        picker.sourceType = sourceType
 
         self.present(picker, animated: true)
     }
 
     
     
-    
-    override func viewDidLoad() {
-        super.viewDidLoad()
-        self.contents.delegate = self
-
-    }
-    
+    // MARK: - TextViewDelegateMethods
     // 텍스트 입력시 "저장"버튼을 "완료"버튼으로 변경 및 활성화. "이미지 피커"버튼 비활성화.
     func textViewDidBeginEditing(_ textView: UITextView) {
         doneSaveButton.title = "완료"
@@ -77,6 +111,8 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         pickerButton.isEnabled = true
     }
  
+    
+    // MARK: - Edit Title
     // 내용에 따라 제목 설정
     func textViewDidChange(_ textView: UITextView) {
         // 내용의 최대 15자리까지 읽어 subject 변수에 저장한다.
@@ -88,25 +124,6 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         self.navigationItem.title = subject
     }
     
-    // 이미지 선택을 완료했을 떄 호출되는 메소드
-    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
-        // 선택된 이미지를 미리보기에 표시한다.
-        self.preview.image        = info[.editedImage] as? UIImage
+    
 
-        //이미지 피커 컨트롤러를 닫는다.
-        picker.dismiss(animated: true)
-    }
-
-
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 }
-
