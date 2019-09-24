@@ -29,20 +29,20 @@ class MemoListVC: UITableViewController {
         let cellID = row.image == nil ? "memoCell" : "memoCellWithImage"
         
         // 재사용 큐로부터 프로토타입 셀의 인스턴스를 전달받는다.
-        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as! MemoCell
+        let cell = tableView.dequeueReusableCell(withIdentifier: cellID) as? MemoCell
         
         // memoCell의 내용을 구성한다.
-        cell.subject?.text = row.title
-        cell.contents?.text = row.contents
-        cell.img?.image = row.image
+        cell?.subject?.text = row.title
+        cell?.contents?.text = row.contents
+        cell?.img?.image = row.image
         
         // Date 타입의 날짜를 yyyy-MM-dd HH:mm:ss 포맷에 맞게 변경한다.
         let formater = DateFormatter()
         formater.dateFormat = "yyyy-MM-dd HH:mm:ss"
-        cell.regdate?.text = formater.string(from: row.regdate!)
+        cell?.regdate?.text = formater.string(from: row.regdate!)
         
         // 셀 객체 리턴
-        return cell
+        return cell!
     }
     
     
@@ -53,17 +53,17 @@ class MemoListVC: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        // memolist 배열에서 선택된 행에 맞는 데이터를 꺼낸다.
-        let row = self.appDelegate.memolist[indexPath.row]
+        self.performSegue(withIdentifier: "detail_segue", sender: self)
         
-        guard let vc = self.storyboard?.instantiateViewController(withIdentifier: "MemoRead") as? MemoReadVC else {
-            NSLog("problem Occured.")
-            return
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "detail_segue" {
+            let vc = segue.destination as! MemoReadVC
+            let path = self.tableView.indexPathForSelectedRow
+            let row = self.appDelegate.memolist[path!.row]
+            vc.param = row
         }
-        
-        vc.param = row
-        self.navigationController?.pushViewController(vc, animated: true)
-        
     }
     /*
     // MARK: - Navigation
