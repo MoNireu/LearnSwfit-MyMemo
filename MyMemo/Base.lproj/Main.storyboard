@@ -177,25 +177,25 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="atX-SC-WDk">
-                                <rect key="frame" x="20" y="52" width="374" height="386"/>
+                                <rect key="frame" x="20" y="52" width="374" height="406"/>
                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="386" id="IHD-XT-3Ij"/>
+                                    <constraint firstAttribute="width" secondItem="atX-SC-WDk" secondAttribute="height" multiplier="187:203" id="w1W-JR-fwI"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences" spellCheckingType="no" keyboardAppearance="alert"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="KUs-xV-I7G">
-                                <rect key="frame" x="20" y="446" width="250" height="250"/>
+                                <rect key="frame" x="20" y="466" width="250" height="250"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="250" id="0DG-VD-pQF"/>
-                                    <constraint firstAttribute="height" constant="250" id="0L6-Mp-4Kr"/>
+                                    <constraint firstAttribute="width" secondItem="KUs-xV-I7G" secondAttribute="height" multiplier="1:1" id="Eas-ax-T6e"/>
                                 </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
                             <constraint firstItem="atX-SC-WDk" firstAttribute="top" secondItem="Caw-9n-DzF" secondAttribute="top" constant="8" id="0fp-zp-dzJ"/>
+                            <constraint firstItem="Caw-9n-DzF" firstAttribute="bottom" secondItem="KUs-xV-I7G" secondAttribute="bottom" constant="20" id="Ptl-Iq-GZq"/>
                             <constraint firstItem="KUs-xV-I7G" firstAttribute="leading" secondItem="Po3-1Z-RkZ" secondAttribute="leadingMargin" id="T9c-y6-hYc"/>
                             <constraint firstItem="atX-SC-WDk" firstAttribute="leading" secondItem="Po3-1Z-RkZ" secondAttribute="leadingMargin" id="aRd-OD-ZKB"/>
                             <constraint firstItem="atX-SC-WDk" firstAttribute="trailing" secondItem="Po3-1Z-RkZ" secondAttribute="trailingMargin" id="c2K-pM-hZK"/>
