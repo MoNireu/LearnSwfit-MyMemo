@@ -66,7 +66,7 @@ class MemoFormVC: UIViewController, UIImagePickerControllerDelegate, UINavigatio
         let album = UIAlertAction(title: "저장앨범", style: .default) {(_) in
             self.source(.savedPhotosAlbum)
         }
-        let photoLibrary = UIAlertAction(title: "저장앨범", style: .default) {(_) in
+        let photoLibrary = UIAlertAction(title: "사진 라이브러리", style: .default) {(_) in
             self.source(.photoLibrary)
         }
         actionSheet.addAction(camera)
