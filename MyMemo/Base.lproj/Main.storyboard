@@ -1,9 +1,8 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14868" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnX-kG-wVN">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="gnX-kG-wVN">
     <device id="retina5_5" orientation="portrait" appearance="light"/>
     <dependencies>
-        <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14824"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -19,18 +18,28 @@
                         <view key="tableFooterView" contentMode="scaleToFill" id="qJE-PG-IET">
                             <rect key="frame" x="0.0" y="216" width="414" height="44"/>
                             <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <subviews>
+                                <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KCc-mV-dN0" customClass="CSLogButton" customModule="MyMemo" customModuleProvider="target">
+                                    <rect key="frame" x="187.66666666666666" y="7" width="39" height="30"/>
+                                    <state key="normal" title="더보기"/>
+                                </button>
+                            </subviews>
                             <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                            <constraints>
+                                <constraint firstItem="KCc-mV-dN0" firstAttribute="centerY" secondItem="qJE-PG-IET" secondAttribute="centerY" id="Zqj-pG-x7X"/>
+                                <constraint firstItem="KCc-mV-dN0" firstAttribute="centerX" secondItem="qJE-PG-IET" secondAttribute="centerX" id="xwC-QQ-Nyp"/>
+                            </constraints>
                         </view>
                         <prototypes>
                             <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" accessoryType="disclosureIndicator" indentationWidth="10" reuseIdentifier="memoCell" rowHeight="80" id="lyh-0S-maT" customClass="MemoCell" customModule="MyMemo" customModuleProvider="target">
                                 <rect key="frame" x="0.0" y="28" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="lyh-0S-maT" id="Dca-On-Pgr">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0x4-fk-wXs">
-                                            <rect key="frame" x="20" y="11" width="278.66666666666669" height="21"/>
+                                            <rect key="frame" x="20" y="11" width="279" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="Plb-eU-UhI"/>
                                             </constraints>
@@ -39,7 +48,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9We-q2-ezy">
-                                            <rect key="frame" x="20" y="40" width="278.66666666666669" height="28.666666666666671"/>
+                                            <rect key="frame" x="20" y="40" width="279" height="28.666666666666671"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28.670000000000002" id="PKV-AQ-lzg"/>
                                             </constraints>
@@ -50,7 +59,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CVV-3D-z6S" userLabel="날짜">
-                                            <rect key="frame" x="309.66666666666669" y="11" width="65" height="58"/>
+                                            <rect key="frame" x="310" y="11" width="65" height="58"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="R25-MJ-PvO"/>
                                             </constraints>
@@ -83,11 +92,11 @@
                                 <rect key="frame" x="0.0" y="108" width="414" height="80"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="HC2-w7-i8t" id="2el-g6-WZf">
-                                    <rect key="frame" x="0.0" y="0.0" width="382.66666666666669" height="80"/>
+                                    <rect key="frame" x="0.0" y="0.0" width="383" height="80"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="글의 제목" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EQL-dq-Cli">
-                                            <rect key="frame" x="88.999999999999986" y="11" width="209.66666666666663" height="21"/>
+                                            <rect key="frame" x="89" y="11" width="210" height="21"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="21" id="4OS-gn-Ihs"/>
                                             </constraints>
@@ -96,7 +105,7 @@
                                             <nil key="highlightedColor"/>
                                         </label>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NWE-Fe-Nqi">
-                                            <rect key="frame" x="88.999999999999986" y="40" width="209.66666666666663" height="28.666666666666671"/>
+                                            <rect key="frame" x="89" y="40" width="210" height="28.666666666666671"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="28.670000000000002" id="MIP-6k-pf8"/>
                                             </constraints>
@@ -114,7 +123,7 @@
                                             </constraints>
                                         </imageView>
                                         <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" textAlignment="right" lineBreakMode="wordWrap" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Osa-IK-S0S">
-                                            <rect key="frame" x="309.66666666666669" y="11" width="65" height="58"/>
+                                            <rect key="frame" x="310" y="11" width="65" height="58"/>
                                             <constraints>
                                                 <constraint firstAttribute="width" constant="65" id="wym-O0-iSY"/>
                                             </constraints>
